@@ -1,0 +1,18 @@
+{
+  "targets": {
+    "to-do-list-app-13463": {
+      "hosting": {
+        "planes": [
+          "to-do-list-app-13463"
+        ]
+      }
+    },
+    "planes-bf5d4": {
+      "hosting": {
+        "planes": [
+          "planes-bf5d4"
+        ]
+      }
+    }
+  }
+}
