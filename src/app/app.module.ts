@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import {MaterialModule} from './material/material.module';
+import {AppRoutingModule} from './app-routing.module';
+import {CoreModule} from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -13,6 +15,8 @@ import {MaterialModule} from './material/material.module';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    CoreModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     MaterialModule
