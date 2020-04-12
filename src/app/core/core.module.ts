@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
+import {RouterModule} from '@angular/router';
+import {MaterialModule} from '../material/material.module';
 
 
 
@@ -9,7 +11,9 @@ import { LoginComponent } from './login/login.component';
   declarations: [DashboardComponent, LoginComponent],
   exports: [DashboardComponent, LoginComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    MaterialModule
   ]
 })
 export class CoreModule { }

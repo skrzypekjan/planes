@@ -8,6 +8,8 @@ import { environment } from '../environments/environment';
 import {MaterialModule} from './material/material.module';
 import {AppRoutingModule} from './app-routing.module';
 import {CoreModule} from './core/core.module';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {FlightsModule} from './flights/flights.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import {CoreModule} from './core/core.module';
     CoreModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    MaterialModule
+    AngularFireDatabaseModule,
+    MaterialModule,
+    FlightsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
