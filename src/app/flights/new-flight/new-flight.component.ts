@@ -7,6 +7,7 @@ import {FlightsFormComponent} from '../flights-form/flights-form.component';
   templateUrl: './new-flight.component.html',
   styleUrls: ['./new-flight.component.scss']
 })
+
 export class NewFlightComponent {
 
   @ViewChild('flightForm') flightForm: FlightsFormComponent;

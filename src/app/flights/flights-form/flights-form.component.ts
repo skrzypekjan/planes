@@ -6,6 +6,7 @@ import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
   templateUrl: './flights-form.component.html',
   styleUrls: ['./flights-form.component.scss']
 })
+
 export class FlightsFormComponent implements OnInit {
   form: FormGroup;
   jobs = [
