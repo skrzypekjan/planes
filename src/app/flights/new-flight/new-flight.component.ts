@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {MatDialogRef} from '@angular/material/dialog';
+import {FlightsFormComponent} from '../flights-form/flights-form.component';
 
 @Component({
   selector: 'app-new-flight',
@@ -8,6 +9,7 @@ import {MatDialogRef} from '@angular/material/dialog';
 })
 export class NewFlightComponent {
 
+  @ViewChild('flightForm') flightForm: FlightsFormComponent;
   constructor(private dialogRef: MatDialogRef<NewFlightComponent>) { }
 
 
