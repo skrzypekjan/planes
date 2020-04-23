@@ -2,6 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {MatDialogRef} from '@angular/material/dialog';
 import {FlightsFormComponent} from '../flights-form/flights-form.component';
 import {FlightsService} from '../../core/services/flights.service';
+import {MatSnackBar, MatSnackBarConfig} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-new-flight',
@@ -15,6 +16,7 @@ export class NewFlightComponent {
 
   constructor(
     private dialogRef: MatDialogRef<NewFlightComponent>,
+    private toast: MatSnackBar,
     private flightsService: FlightsService
   ) { }
 
@@ -26,10 +28,12 @@ export class NewFlightComponent {
 
   private onCreatingSucces(){
     this.dialogRef.close();
+    this.toast.open('Flight has been successfully created!', '',{panelClass: 'toast-success'});
   }
 
-  private onCreatingFailure(){
+  private onCreatingFailure(error){
     console.log('some error');
+    this.toast.open(error.message, '',{panelClass: 'toast-error'});
   }
 
 }
