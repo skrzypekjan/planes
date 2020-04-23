@@ -17,6 +17,11 @@ export class FlightsService {
       .pipe(map(response => response.map(flight => this.assignKey(flight))));
   }
 
+  // method of sending a flight to firebase
+  addFlight(flight: Flight){
+    return this.db.list<Flight>(this.API_URL).push(flight);
+  }
+
   private assignKey(flight) {
     return {...flight.payload.val(), key: flight.key};
   }
