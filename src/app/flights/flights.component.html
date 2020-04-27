@@ -1,5 +1,5 @@
 <div class="row flights-container">
-  <div class="col-sm-4" *ngFor="let flights of flights$ | async">
+  <div class="col-sm-4" *ngFor="let flights of flights$ | async" (click)="showDetails(flights)">
     <app-flight-card [flight]="flights"></app-flight-card>
   </div>
 </div>
