@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Crew, Flight} from '../../models/flight.model';
 
 @Component({
   selector: 'app-flights-form',
   templateUrl: './flights-form.component.html',
   styleUrls: ['./flights-form.component.scss']
 })
-
 export class FlightsFormComponent implements OnInit {
   form: FormGroup;
+  @Input() editMode = false;
   jobs = [
     { label: 'Stweradess', value: 'stweradess'},
     { label: 'Senior Cabin Crew', value: 'senior_cabin_crew'},
@@ -24,18 +25,24 @@ export class FlightsFormComponent implements OnInit {
     this.buildForm();
   }
 
+  setFlight(flight: Flight) {
+    const {key, ...formData} = flight;
+    this.form.patchValue(formData);
+    formData.crew.forEach(crewMember => this.addCrewMember(crewMember));
+  }
+
   get crew(){
     return this.form.get('crew') as FormArray;
   }
 
-  addCrewMember() {
-    this.crew.push(this.buildCrewMember());
+  addCrewMember(crewMember?: Crew) {
+    this.crew.push(this.buildCrewMember(crewMember));
   }
 
-  buildCrewMember() {
+  buildCrewMember(crewMember: Crew = {} as Crew) {
     return this.formBuilder.group( {
-      name: '',
-      job: ''
+      name: crewMember.name || '',
+      job: crewMember.job || ''
     });
   }
 
@@ -53,7 +60,7 @@ export class FlightsFormComponent implements OnInit {
         Validators.maxLength(7)]}],
       additionalInformation: '',
       withSKPlanesDiscount: false,
-      crew: this.formBuilder.array([this.buildCrewMember()])
+      crew: this.formBuilder.array(this.editMode ? [] : [this.buildCrewMember()])
     });
   }
 
