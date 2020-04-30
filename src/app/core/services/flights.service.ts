@@ -18,7 +18,7 @@ export class FlightsService {
   }
 
   // method to get one flight
-  getFlight(key: string): Observable<Flight>{
+  getFlight(key: string): Observable<Flight> {
     return this.db.object<Flight>(`${this.API_URL}/${key}`).snapshotChanges()
       .pipe(map(flight => this.assignKey(flight)));
   }

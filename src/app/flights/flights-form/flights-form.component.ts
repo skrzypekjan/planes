@@ -18,7 +18,6 @@ export class FlightsFormComponent implements OnInit {
     { label: 'Mechanic', value: 'mechanic'},
 
   ];
-
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -57,11 +56,10 @@ export class FlightsFormComponent implements OnInit {
       departureTime: ['', { validators: [Validators.required]}],
       returnTime: ['', { validators: [Validators.required]}],
       code: ['SJ', { validators: [Validators.required, Validators.minLength(4),
-        Validators.maxLength(7)]}],
+          Validators.maxLength(7)]}],
       additionalInformation: '',
       withSKPlanesDiscount: false,
       crew: this.formBuilder.array(this.editMode ? [] : [this.buildCrewMember()])
     });
   }
-
 }

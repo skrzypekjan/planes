@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-9">
+    <h3>Edit flight <strong>{{ flight?.code }}</strong> details</h3>
+  </div>
+</div>
+<mat-dialog-content>
+  <app-flights-form #flightForm [editMode]="true"></app-flights-form>
+</mat-dialog-content>
+<div class="row">
+  <div class="col text-right">
+    <button mat-raised-button>RESET</button>
+    <button mat-raised-button color="primary">SAVE</button>
+  </div>
+</div>
