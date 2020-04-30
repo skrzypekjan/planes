@@ -26,15 +26,15 @@ export class EditFlightComponent implements OnInit{
     this.loadFlight();
   }
 
-  // removeFlight() {
-  //   this.flightsService.removeFlight(this.flight.key)
-  //     .then(this.onRemoveSuccess.bind(this), this.onFailure.bind(this));
-  // }
-  //
-  // editFlight() {
-  //   this.flightsService.editFlight(this.flight.key, this.flightForm.form.value)
-  //     .then(this.onEditSuccess.bind(this), this.onFailure.bind(this));
-  // }
+  removeFlight() {
+    this.flightsService.removeFlight(this.flight.key)
+      .then(this.onRemoveSuccess.bind(this), this.onFailure.bind(this));
+  }
+
+  editFlight() {
+    this.flightsService.editFlight(this.flight.key, this.flightForm.form.value)
+      .then(this.onEditSuccess.bind(this), this.onFailure.bind(this));
+  }
 
   private onEditSuccess() {
     this.router.navigate(['/dashboard']);
