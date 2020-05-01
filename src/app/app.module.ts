@@ -10,6 +10,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {CoreModule} from './core/core.module';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {FlightsModule} from './flights/flights.module';
+import {AngularFireAuthModule} from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {FlightsModule} from './flights/flights.module';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    AngularFireAuthModule,
     MaterialModule,
     FlightsModule
   ],
