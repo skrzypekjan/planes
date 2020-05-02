@@ -9,6 +9,7 @@ import { FlightsFormComponent } from './flights-form/flights-form.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { DetailsComponent } from './details/details.component';
 import { EditFlightComponent } from './edit-flight/edit-flight.component';
+import {FlightsRoutingModule} from './flights-routing.module';
 
 
 
@@ -24,7 +25,8 @@ import { EditFlightComponent } from './edit-flight/edit-flight.component';
     MaterialModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FlightsRoutingModule
   ]
 })
 export class FlightsModule { }
