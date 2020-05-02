@@ -5,6 +5,7 @@ import {DashboardComponent} from './core/dashboard/dashboard.component';
 import {FlightsComponent} from './flights/flights.component';
 import {EditFlightComponent} from './flights/edit-flight/edit-flight.component';
 import {AuthGuard} from './core/services/auth.guard';
+import {PageNotFoundComponent} from './core/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -17,7 +18,8 @@ const routes: Routes = [
       {path: '', redirectTo: 'flights', pathMatch: 'full'},
       {path: 'flights', loadChildren: './flights/flights.module#FlightsModule'},
     ]
-  }
+  },
+  {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
