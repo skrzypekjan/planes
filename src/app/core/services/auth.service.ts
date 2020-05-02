@@ -14,12 +14,12 @@ export class AuthService {
 
   constructor(private fireAuth: AngularFireAuth) {}
 
-  login(credentials: {email: string, password: string}) {
+  login(credentials: Credentials) {
     return this.fireAuth.signInWithEmailAndPassword(credentials.email, credentials.password)
       .then(userCredential => this.userData = userCredential.user);
   }
 
-  register(credentials: {email: string, password: string}) {
+  register(credentials: Credentials) {
     return this.fireAuth.createUserWithEmailAndPassword(credentials.email, credentials.password);
   }
 
